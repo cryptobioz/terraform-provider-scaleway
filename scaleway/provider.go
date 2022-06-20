@@ -287,7 +287,7 @@ func loadProfile(ctx context.Context, d *schema.ResourceData) (*scw.Profile, err
 		}
 	}
 
-	profile := scw.MergeProfiles(defaultZoneProfile, activeProfile, providerProfile, envProfile)
+	profile := scw.MergeProfiles(defaultZoneProfile, activeProfile, envProfile, providerProfile)
 
 	// If profile have a defaultZone but no defaultRegion we set the defaultRegion
 	// to the one of the defaultZone
